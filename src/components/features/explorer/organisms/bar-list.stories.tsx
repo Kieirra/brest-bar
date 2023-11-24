@@ -1,15 +1,15 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import BarList from "./bar-list";
+import { BarListUI } from "./bar-list";
 
-const meta: Meta<typeof BarList> = {
+const meta: Meta<typeof BarListUI> = {
     title: "features/explorer/organisms/BarList",
-    component: BarList,
+    component: BarListUI,
     tags: ["autodocs"],
 };
 
 export default meta;
 
-type Story = StoryObj<typeof BarList>;
+type Story = StoryObj<typeof BarListUI>;
 
 export const Empty: Story = {
     args: {

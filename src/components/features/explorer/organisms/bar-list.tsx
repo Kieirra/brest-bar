@@ -1,9 +1,18 @@
-import BarCard, { BarCardProps } from "../molecules/bar-card";
+"use client";
 
-const BarList = ({ items }: { items: BarCardProps[] }) => {
+import tw from "tailwind-styled-components";
+import BarCard, { BarCardProps } from "../molecules/bar-card";
+import useBarList from "./use-bar-list";
+
+const BarList = () => {
+    const { items } = useBarList();
+    return <BarListUI items={items} />;
+};
+
+export const BarListUI = ({ items }: { items: BarCardProps[] }) => {
     return (
         <div className="bg-ngrey-800 p-4 max-w-lg">
-            <h1 className="uppercase bold mb-4 text-2xl text-white">Explorer</h1>
+            <Title>Explorer</Title>
             <div className="flex flex-col space-y-6">
                 {items.map((item) => (
                     <BarCard item={item} />
@@ -12,5 +21,13 @@ const BarList = ({ items }: { items: BarCardProps[] }) => {
         </div>
     );
 };
+
+const Title = tw.h1`
+  uppercase 
+  bold 
+  mb-4 
+  text-2xl 
+  text-white
+`;
 
 export default BarList;
