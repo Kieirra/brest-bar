@@ -11,9 +11,9 @@ const config: Config = {
         extend: {
             colors: {
                 primary: colors.sky,
-                secondary: colors.orange,
+                secondary: colors.indigo,
                 ngrey: colors.slate,
-                accent: colors.indigo,
+                accent: colors.fuchsia,
             },
         },
     },
