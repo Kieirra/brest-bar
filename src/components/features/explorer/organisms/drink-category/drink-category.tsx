@@ -1,5 +1,5 @@
 import Block from "@/components/common/atoms/block";
-import Title from "../../atoms/title";
+import BlockTitle from "../../atoms/block-title";
 import Card from "@/components/common/atoms/card";
 import tw from "tailwind-styled-components";
 
@@ -21,7 +21,7 @@ const categories = [
 const DrinkCategory = ({ className = "" }) => {
     return (
         <Block className={className}>
-            <Title>Où boire à Brest ?</Title>
+            <BlockTitle>Où boire à Brest ?</BlockTitle>
             <div className="flex flex-row justify-between">
                 {categories.map((category) => (
                     <div key={category.name}>

@@ -1,6 +1,6 @@
 import tw from "tailwind-styled-components";
 
-const Title = tw.h1`
+const BlockTitle = tw.h1`
   uppercase 
   bold 
   mb-4 
@@ -8,4 +8,4 @@ const Title = tw.h1`
   text-white
 `;
 
-export default Title;
+export default BlockTitle;

@@ -2,7 +2,7 @@
 
 import BarCard, { BarCardProps } from "../../molecules/bar-card";
 import useBarList from "./use-bar-list";
-import Title from "../../atoms/title";
+import BlockTitle from "../../atoms/block-title";
 import Block from "@/components/common/atoms/block";
 
 const BarList = ({ className = "" }) => {
@@ -13,7 +13,7 @@ const BarList = ({ className = "" }) => {
 export const BarListUI = ({ bars, className }: { bars: BarCardProps[]; className?: string }) => {
     return (
         <Block className={className}>
-            <Title>Explorer</Title>
+            <BlockTitle>Explorer</BlockTitle>
             <div className="flex flex-col space-y-6">
                 {bars.map((bar, index) => (
                     <BarCard item={bar} key={index} />

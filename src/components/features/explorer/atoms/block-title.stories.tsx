@@ -1,15 +1,15 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import Title from "./title";
+import BlockTitle from "./block-title";
 
-const meta: Meta<typeof Title> = {
+const meta: Meta<typeof BlockTitle> = {
     title: "features/explorer/atoms/Title",
-    component: Title,
+    component: BlockTitle,
     tags: ["autodocs"],
 };
 
 export default meta;
 
-type Story = StoryObj<typeof Title>;
+type Story = StoryObj<typeof BlockTitle>;
 
 export const Empty: Story = {
     args: {
