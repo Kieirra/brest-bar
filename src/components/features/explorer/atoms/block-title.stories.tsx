@@ -18,7 +18,7 @@ export const Empty: Story = {
     decorators: [
         (Story) => {
             return (
-                <div className="bg-ngrey-800 p-2">
+                <div className="bg-ngrey-800 p-2 inline-block">
                     <Story />
                 </div>
             );
