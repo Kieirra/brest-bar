@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import "tailwindcss/tailwind.css";
 import BarCard from "./bar-card";
+import { Category } from "@/app/api/bars/route";
 
 const meta: Meta<typeof BarCard> = {
     title: "features/explorer/molecules/BarCard",
@@ -18,6 +19,7 @@ export const Fill: Story = {
             name: "La Javanaise Bar Brest",
             address: "40 Quai de la Douane, 29200 Brest, France",
             website: "https://www.facebook.com/lajavanaise29200/",
+            category: Category.BAR,
         },
     },
 };

@@ -1,4 +1,6 @@
 import { Category } from "@/app/api/bars/route";
+import { getBarIcon } from "@/lib/common/common";
+import { get } from "http";
 import L, { LatLng } from "leaflet";
 
 export const toLngLat = (point = [0, 0]) => {
@@ -7,16 +9,7 @@ export const toLngLat = (point = [0, 0]) => {
 };
 
 export const getIcon = (category: Category) => {
-    switch (category) {
-        case Category.CAVE:
-            return L.divIcon({ html: "🍷" });
-        case Category.BRASSERIE:
-            return L.divIcon({ html: "🍺" });
-        case Category.BAR:
-            return L.divIcon({ html: "🍹" });
-        default:
-            return L.divIcon({ html: `🍹` });
-    }
+    return L.divIcon({ html: getBarIcon(category) });
 };
 
 export const createClusterCustomIcon = function (cluster: any) {

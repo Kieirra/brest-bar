@@ -1,3 +1,4 @@
+import { Category } from "@/app/api/bars/route";
 import Card from "@/components/common/atoms/card";
 import tw from "tailwind-styled-components";
 
@@ -5,6 +6,7 @@ export interface BarCardProps {
     name: string;
     address: string;
     website: string;
+    category: Category;
 }
 
 const BarCard = ({ item }: { item: BarCardProps }) => {

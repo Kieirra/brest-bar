@@ -23,7 +23,20 @@ export const GET = async (request: Request) => {
         website: bar.website,
         // we need to reverse the coordinates because the API returns them in the wrong order
         location: [bar.location?.coordinates[1], bar.location?.coordinates[0]],
+        category: getCategory(bar.name),
     })) as Bar[];
 
     return NextResponse.json(bars);
+};
+
+const getCategory = (name: string) => {
+    const regexVinCave = /vin|cave/i;
+    const regexBrasserie = /bar/i;
+    if (regexVinCave.test(name)) {
+        return Category.CAVE;
+    } else if (regexBrasserie.test(name)) {
+        return Category.BRASSERIE;
+    } else {
+        return Category.BAR;
+    }
 };
