@@ -7,8 +7,8 @@ import BarsMap from "@/components/features/interactive-map/organisms/bars-map/ba
 const Home = async () => {
     return (
         <main className="relative overflow-hidden">
-            <Header className="absolute top-0 w-screen z-10 h-20"/>
-            <div className="absolute left-0 top-0 z-10 mt-20 overflow-y-auto">
+            <Header className="absolute top-0 w-screen z-10 h-20" />
+            <div className="absolute left-0 top-20 z-10 overflow-y-auto h-[calc(100vh-5rem)] scrollbar-thin scrollbar-thumb-primary-500 scrollbar-track-ngrey-900">
                 <ExplorerTitle />
                 <DrinkCategory className="border-ngrey-500 border-y-2" />
                 <BarList />
