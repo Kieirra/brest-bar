@@ -32,7 +32,7 @@ export const GET = async (request: Request) => {
 
 const getCategory = (name: string) => {
     const regexVinCave = /vin|cave/i;
-    const regexBrasserie = /brasserie/i;
+    const regexBrasserie = /brasserie|beer/i;
     const regexBar = /bar|bistro|pub/i;
     if (regexVinCave.test(name)) {
         return Category.CAVE;
