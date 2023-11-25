@@ -1,13 +1,11 @@
 import Block from "@/components/common/atoms/block";
+import TextGradient from "@/components/common/atoms/text-gradient";
 
 const ExplorerTitle = () => {
     return (
         <Block>
             <h1 className="text-4xl text-white">
-                Trouver le bar qu'il vous faut{" "}
-                <span className="bg-gradient-to-r from-primary-500 to-accent-400 text-transparent bg-clip-text font-bold">
-                    selon votre humeur
-                </span>
+                Trouver le bar qu'il vous faut <TextGradient>selon votre humeur</TextGradient>
             </h1>
         </Block>
     );
