@@ -5,17 +5,17 @@ import BarCard, { BarCardProps } from "../molecules/bar-card";
 import useBarList from "./use-bar-list";
 
 const BarList = () => {
-    const { items } = useBarList();
-    return <BarListUI items={items} />;
+    const { bars } = useBarList();
+    return <BarListUI bars={bars} />;
 };
 
-export const BarListUI = ({ items }: { items: BarCardProps[] }) => {
+export const BarListUI = ({ bars }: { bars: BarCardProps[] }) => {
     return (
         <div className="bg-ngrey-800 p-4 max-w-lg">
             <Title>Explorer</Title>
             <div className="flex flex-col space-y-6">
-                {items.map((item) => (
-                    <BarCard item={item} />
+                {bars.map((bar) => (
+                    <BarCard item={bar} />
                 ))}
             </div>
         </div>

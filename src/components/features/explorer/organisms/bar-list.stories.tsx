@@ -11,9 +11,9 @@ export default meta;
 
 type Story = StoryObj<typeof BarListUI>;
 
-export const Empty: Story = {
+export const Fill: Story = {
     args: {
-        items: [
+        bars: [
             {
                 name: "La Javanaise Bar Brest",
                 address: "40 Quai de la Douane, 29200 Brest, France",
@@ -25,5 +25,11 @@ export const Empty: Story = {
                 website: "https://www.facebook.com/lajavanaise29200/",
             },
         ],
+    },
+};
+
+export const Empty: Story = {
+    args: {
+        bars: [],
     },
 };

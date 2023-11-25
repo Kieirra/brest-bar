@@ -1,19 +1,20 @@
+import { Bar } from "@/app/api/bars/route";
 import { useEffect, useState } from "react";
 
 const useBarList = () => {
-    const [items, setItems] = useState([]);
+    const [bars, setBars] = useState([] as Bar[]);
 
     useEffect(() => {
         const fetchData = async () => {
             const response = await fetch("/api/bars");
-            const data = await response.json();
-            setItems(data);
+            const bars = await response.json();
+            setBars(bars);
         };
         fetchData();
     }, []);
 
     return {
-        items,
+        bars,
     };
 };
 

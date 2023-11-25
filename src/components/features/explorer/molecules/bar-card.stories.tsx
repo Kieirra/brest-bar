@@ -12,7 +12,7 @@ export default meta;
 
 type Story = StoryObj<typeof BarCard>;
 
-export const Empty: Story = {
+export const Fill: Story = {
     args: {
         item: {
             name: "La Javanaise Bar Brest",
