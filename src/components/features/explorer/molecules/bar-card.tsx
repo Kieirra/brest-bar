@@ -35,7 +35,7 @@ const Title = tw.h2`
 const Website = tw.a`
     text-secondary-300 
     italic 
-    text-sm
+    text-xs
 `;
 
 export default BarCard;
