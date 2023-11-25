@@ -14,8 +14,8 @@ export const BarListUI = ({ bars }: { bars: BarCardProps[] }) => {
         <div className="bg-ngrey-800 p-4 max-w-lg">
             <Title>Explorer</Title>
             <div className="flex flex-col space-y-6">
-                {bars.map((bar) => (
-                    <BarCard item={bar} />
+                {bars.map((bar, index) => (
+                    <BarCard item={bar} key={index} />
                 ))}
             </div>
         </div>
