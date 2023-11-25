@@ -9,7 +9,7 @@ const DrinkCategories = ({ className = "" }) => {
     return (
         <Block className={className}>
             <BlockTitle>Où boire à Brest ?</BlockTitle>
-            <div className="flex flex-row justify-between">
+            <div className="flex flex-row flex-wrap justify-between">
                 {Object.keys(Category).map((category) => (
                     <div key={category}>
                         <Card className="p-10 text-4xl">{getBarIcon(Category[category as keyof typeof Category])}</Card>
@@ -25,7 +25,7 @@ const CategoryName = tw.div`
     capitalize
     text-white 
     text-center 
-    mt-2
+    my-2
 `;
 
 export default DrinkCategories;

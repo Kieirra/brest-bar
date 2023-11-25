@@ -4,6 +4,7 @@ export enum Category {
     CAVE = "cave",
     BRASSERIE = "brasserie",
     BAR = "bar",
+    OTHER = "autre",
 }
 
 export interface Bar {
@@ -31,12 +32,15 @@ export const GET = async (request: Request) => {
 
 const getCategory = (name: string) => {
     const regexVinCave = /vin|cave/i;
-    const regexBrasserie = /bar/i;
+    const regexBrasserie = /brasserie/i;
+    const regexBar = /bar|bistro|pub/i;
     if (regexVinCave.test(name)) {
         return Category.CAVE;
     } else if (regexBrasserie.test(name)) {
         return Category.BRASSERIE;
-    } else {
+    } else if (regexBar.test(name)) {
         return Category.BAR;
+    } else {
+        return Category.OTHER;
     }
 };

@@ -9,6 +9,6 @@ export const getBarIcon = (category: Category) => {
         case Category.BAR:
             return "🍹";
         default:
-            return "🍹";
+            return "🥂";
     }
 };

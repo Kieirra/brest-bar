@@ -1,6 +1,5 @@
 import { Category } from "@/app/api/bars/route";
 import { getBarIcon } from "@/lib/common/common";
-import { get } from "http";
 import L, { LatLng } from "leaflet";
 
 export const toLngLat = (point = [0, 0]) => {
