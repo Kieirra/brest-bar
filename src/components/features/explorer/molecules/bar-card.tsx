@@ -11,14 +11,14 @@ const BarCard = ({ item }: { item: BarCardProps }) => {
     return (
         <Card className="max-w-lg">
             <Title>{item.name}</Title>
-            <div className="text-white">{item.address}</div>
+            <div className="text-primary-400">{item.address}</div>
             <Website>{item.website}</Website>
         </Card>
     );
 };
 
 const Title = tw.h2`
-    text-primary-500 
+    text-white 
     font-bold 
     text-xl
 `;

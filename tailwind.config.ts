@@ -10,10 +10,10 @@ const config: Config = {
     theme: {
         extend: {
             colors: {
-                primary: colors.sky,
+                primary: colors.violet,
                 secondary: colors.indigo,
                 ngrey: colors.slate,
-                accent: colors.fuchsia,
+                accent: colors.sky,
             },
         },
     },
