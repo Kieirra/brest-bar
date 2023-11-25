@@ -1,17 +1,17 @@
 "use client";
 
 import tw from "tailwind-styled-components";
-import BarCard, { BarCardProps } from "../molecules/bar-card";
+import BarCard, { BarCardProps } from "../../molecules/bar-card";
 import useBarList from "./use-bar-list";
 
-const BarList = () => {
+const BarList = ({ className = "" }) => {
     const { bars } = useBarList();
-    return <BarListUI bars={bars} />;
+    return <BarListUI bars={bars} className={className} />;
 };
 
-export const BarListUI = ({ bars }: { bars: BarCardProps[] }) => {
+export const BarListUI = ({ bars, className }: { bars: BarCardProps[]; className?: string }) => {
     return (
-        <div className="bg-ngrey-800 p-4 max-w-lg">
+        <div className={`bg-ngrey-800 p-4 max-w-lg ${className}`}>
             <Title>Explorer</Title>
             <div className="flex flex-col space-y-6">
                 {bars.map((bar, index) => (
