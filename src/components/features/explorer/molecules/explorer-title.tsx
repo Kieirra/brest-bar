@@ -1,4 +1,4 @@
-import Block from "@/components/common/atoms/block";
+import Block from "@/components/features/explorer/atoms/block";
 import TextGradient from "@/components/common/atoms/text-gradient";
 
 const ExplorerTitle = () => {

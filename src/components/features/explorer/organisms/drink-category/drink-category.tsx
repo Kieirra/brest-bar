@@ -1,4 +1,4 @@
-import Block from "@/components/common/atoms/block";
+import Block from "@/components/features/explorer/atoms/block";
 import BlockTitle from "../../atoms/block-title";
 import Card from "@/components/common/atoms/card";
 import tw from "tailwind-styled-components";

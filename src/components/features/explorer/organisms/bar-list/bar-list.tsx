@@ -3,7 +3,7 @@
 import BarCard, { BarCardProps } from "../../molecules/bar-card";
 import useBarList from "./use-bar-list";
 import BlockTitle from "../../atoms/block-title";
-import Block from "@/components/common/atoms/block";
+import Block from "@/components/features/explorer/atoms/block";
 
 const BarList = ({ className = "" }) => {
     const { bars } = useBarList();
