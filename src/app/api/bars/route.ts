@@ -1,9 +1,17 @@
 import { NextResponse } from "next/server";
 
+export enum Category {
+    CAVE = "cave",
+    BRASSERIE = "brasserie",
+    BAR = "bar",
+}
+
 export interface Bar {
     name: string;
     address: string;
     website: string;
+    location: number[];
+    category: Category;
 }
 
 export const GET = async (request: Request) => {
@@ -13,6 +21,8 @@ export const GET = async (request: Request) => {
         name: bar.name,
         address: bar.address,
         website: bar.website,
+        // we need to reverse the coordinates because the API returns them in the wrong order
+        location: [bar.location?.coordinates[1], bar.location?.coordinates[0]],
     })) as Bar[];
 
     return NextResponse.json(bars);
