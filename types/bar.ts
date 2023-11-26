@@ -8,7 +8,9 @@ export enum Category {
 export interface Bar {
     name: string;
     address: string;
-    website: string;
-    location: number[];
-    category: Category;
+    website?: string;
+    location?: number[];
+    category?: Category;
+    rating?: number;
+    ratingCount?: number;
 }

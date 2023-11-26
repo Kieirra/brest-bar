@@ -11,6 +11,8 @@ export const GET = async (request: Request) => {
         // we need to reverse the coordinates because the API returns them in the wrong order
         location: [bar.location?.coordinates[1], bar.location?.coordinates[0]],
         category: getCategory(bar.name),
+        rating: bar.rating,
+        ratingCount: bar.user_ratings_total,
     })) as Bar[];
 
     return NextResponse.json(bars);
