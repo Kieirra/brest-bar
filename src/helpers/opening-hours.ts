@@ -1,5 +1,7 @@
 export const toTextOpeningHours = (openingHours: string, currentHour: number) => {
+    if (!openingHours || openingHours === "null") return "Non disponible";
     if (openingHours.includes("Fermé")) return "Fermé";
+    if (openingHours.includes("Ouvert 24h/24")) return "Ouvert 24h/24";
 
     const [day, hours] = openingHours.split(": ");
     const [start, end] = hours.split(" - ");

@@ -22,6 +22,15 @@ export const Fill: Story = {
             category: Category.BAR,
             rating: 4.3,
             ratingCount: 12,
+            openingHours: [
+                "lundi: Fermé",
+                "mardi: Fermé",
+                "mercredi: Fermé",
+                "jeudi: Fermé",
+                "vendredi: 22:00 - 04:00",
+                "samedi: 22:00 - 04:00",
+                "dimanche: Fermé",
+            ],
         },
     },
 };

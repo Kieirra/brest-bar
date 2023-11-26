@@ -13,4 +13,5 @@ export interface Bar {
     category?: Category;
     rating?: number;
     ratingCount?: number;
+    openingHours?: string[];
 }

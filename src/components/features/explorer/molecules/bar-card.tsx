@@ -1,8 +1,9 @@
 import { Bar } from "../../../../../types/bar";
 import Card from "@/components/common/atoms/card";
-import { getBarIcon, getStars } from "@/helpers/common";
+import { getBarIcon } from "@/helpers/common";
 import tw from "tailwind-styled-components";
 import Ratings from "../atoms/ratings";
+import OpeningHours from "../atoms/opening-hours";
 
 const BarCard = ({ bar }: { bar: Bar }) => {
     return (
@@ -12,7 +13,7 @@ const BarCard = ({ bar }: { bar: Bar }) => {
             </Title>
             <div className="text-white text-sm mb-2">
                 <Ratings rating={bar.rating} ratingCount={bar.ratingCount} /> -{" "}
-                <span className="text-red-300">Fermé à l'heure actuelle</span>
+                <OpeningHours openingHours={bar.openingHours} />
             </div>
             <div className="text-white">{bar.address}</div>
             <Website>{bar.website}</Website>

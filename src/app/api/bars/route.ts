@@ -4,6 +4,7 @@ import { Bar, Category } from "../../../../types/bar";
 export const GET = async (request: Request) => {
     const response = await fetch("https://api.brest.bar/items/bars");
     const json = await response.json();
+
     const bars = json.data.map((bar: any) => ({
         name: bar.name,
         address: bar.address,
@@ -13,6 +14,7 @@ export const GET = async (request: Request) => {
         category: getCategory(bar.name),
         rating: bar.rating,
         ratingCount: bar.user_ratings_total,
+        openingHours: getOpeningHours(bar.opening_hours.replaceAll(" – ", " - ")),
     })) as Bar[];
 
     return NextResponse.json(bars);
@@ -31,4 +33,11 @@ const getCategory = (name: string) => {
     } else {
         return Category.OTHER;
     }
+};
+
+const getOpeningHours = (openingHours: string) => {
+    if (!openingHours || openingHours === "null") return [];;
+    const openingHoursObject = JSON.parse(openingHours);
+    const openingHoursArray = Object.values(openingHoursObject);
+    return openingHoursArray;
 };
