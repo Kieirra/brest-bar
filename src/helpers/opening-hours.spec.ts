@@ -17,7 +17,7 @@ describe("A toTextOpeningHours function", () => {
         expect(toTextOpeningHours("vendredi: 22:00 - 04:00", 23)).toBe("Ouvert 22:00 - 04:00");
     });
 
-    it("should be '' when got null", () => {
+    it("should be 'Non disponible' when got null", () => {
         // @ts-ignore
         expect(toTextOpeningHours(null, 23)).toBe("Non disponible");
     });
