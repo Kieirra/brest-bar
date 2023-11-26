@@ -14,4 +14,5 @@ export interface Bar {
     rating?: number;
     ratingCount?: number;
     openingHours?: string[];
+    phone?: string;
 }

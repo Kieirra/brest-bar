@@ -15,8 +15,15 @@ const BarCard = ({ bar }: { bar: Bar }) => {
                 <Ratings rating={bar.rating} ratingCount={bar.ratingCount} /> -{" "}
                 <OpeningHours openingHours={bar.openingHours} />
             </div>
-            <div className="text-white">{bar.address}</div>
-            <Website>{bar.website}</Website>
+            <div className="text-white mb-2">{bar.address}</div>
+            <div className="flex flex-row space-x-8">
+                {bar.website && (
+                    <Contact href={bar.website} target="_blank" rel="noreferrer">
+                        🗔 &nbsp; Site web
+                    </Contact>
+                )}
+                <Contact href={`tel:${bar.phone}`}>☏ &nbsp; {bar.phone}</Contact>
+            </div>
         </Card>
     );
 };
@@ -27,10 +34,8 @@ const Title = tw.h2`
     text-xl
 `;
 
-const Website = tw.a`
+const Contact = tw.a`
     text-secondary-300 
-    italic 
-    text-xs
 `;
 
 export default BarCard;

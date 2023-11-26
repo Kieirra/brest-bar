@@ -22,7 +22,7 @@ const OpeningHours = ({
         return <Text>Non disponible</Text>;
     }
 
-    return <Text className={isClosed ? "text-red-300" : "text-green-600"}>{textToDisplay}</Text>;
+    return <Text className={isClosed ? "text-red-300" : "text-green-500"}>{textToDisplay}</Text>;
 };
 
 export default OpeningHours;

@@ -31,6 +31,7 @@ export const Fill: Story = {
                 "samedi: 22:00 - 04:00",
                 "dimanche: Fermé",
             ],
+            phone: "06 95 52 55 72",
         },
     },
 };
