@@ -1,16 +1,16 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { BarListUI } from "./bar-list";
+import BarList from "./bar-list";
 import { Category } from "@/../types/bar";
 
-const meta: Meta<typeof BarListUI> = {
-    title: "features/explorer/organisms/BarList",
-    component: BarListUI,
+const meta: Meta<typeof BarList> = {
+    title: "features/explorer/molecules/BarList",
+    component: BarList,
     tags: ["autodocs"],
 };
 
 export default meta;
 
-type Story = StoryObj<typeof BarListUI>;
+type Story = StoryObj<typeof BarList>;
 
 export const Fill: Story = {
     args: {
@@ -22,6 +22,7 @@ export const Fill: Story = {
                 category: Category.BAR,
                 rating: 3,
                 ratingCount: 12,
+                phone: "06 95 52 55 72",
             },
             {
                 name: "La Javanaise Bar Brest",
@@ -30,6 +31,7 @@ export const Fill: Story = {
                 category: Category.CAVE,
                 rating: 4.3,
                 ratingCount: 15,
+                phone: "06 95 52 55 72",
             },
         ],
     },

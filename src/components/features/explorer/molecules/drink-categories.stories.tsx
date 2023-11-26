@@ -3,7 +3,7 @@ import 'tailwindcss/tailwind.css';
 import DrinkCategories from './drink-categories';
 
 const meta: Meta<typeof DrinkCategories> = {
-    title: 'features/explorer/organisms/DrinkCategories',
+    title: 'features/explorer/molecules/DrinkCategories',
     component: DrinkCategories,
     tags: ['autodocs']
 };
