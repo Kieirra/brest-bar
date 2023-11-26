@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { BarsMapUI } from "./bars-map";
-import { Category } from "@/app/api/bars/route";
+import { Category } from "../../../../../../types/bar";
 
 const meta: Meta<typeof BarsMapUI> = {
     title: "features/interactive-map/organisms/BarsMap",

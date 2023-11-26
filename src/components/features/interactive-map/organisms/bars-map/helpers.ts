@@ -1,4 +1,4 @@
-import { Category } from "@/app/api/bars/route";
+import { Category } from "../../../../../../types/bar";
 import { getBarIcon } from "@/lib/common/common";
 import L, { LatLng } from "leaflet";
 

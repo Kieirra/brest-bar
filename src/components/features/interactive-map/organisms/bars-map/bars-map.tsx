@@ -4,7 +4,7 @@ import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import { LatLng } from "leaflet";
 import MarkerClusterGroup from "react-leaflet-cluster";
 import LeafletImport from "../../atoms/leaflet-import";
-import { Bar } from "@/app/api/bars/route";
+import { Bar } from "@/../types/bar";
 import { createClusterCustomIcon, getIcon, toLngLat } from "./helpers";
 import useBarList from "@/components/features/explorer/organisms/bar-list/use-bar-list";
 import "./bars-map.css";

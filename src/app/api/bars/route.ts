@@ -1,19 +1,5 @@
 import { NextResponse } from "next/server";
-
-export enum Category {
-    CAVE = "cave",
-    BRASSERIE = "brasserie",
-    BAR = "bar",
-    OTHER = "autre",
-}
-
-export interface Bar {
-    name: string;
-    address: string;
-    website: string;
-    location: number[];
-    category: Category;
-}
+import { Bar, Category } from "../../../../types/bar";
 
 export const GET = async (request: Request) => {
     const response = await fetch("https://api.brest.bar/items/bars");

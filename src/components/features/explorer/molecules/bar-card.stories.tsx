@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import "tailwindcss/tailwind.css";
 import BarCard from "./bar-card";
-import { Category } from "@/app/api/bars/route";
+import { Category } from "../../../../../types/bar";
 
 const meta: Meta<typeof BarCard> = {
     title: "features/explorer/molecules/BarCard",

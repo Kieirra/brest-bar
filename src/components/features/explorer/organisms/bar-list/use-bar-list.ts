@@ -1,4 +1,4 @@
-import { Bar } from "@/app/api/bars/route";
+import { Bar } from "../../../../../../types/bar";
 import { useEffect, useState } from "react";
 
 const useBarList = () => {
