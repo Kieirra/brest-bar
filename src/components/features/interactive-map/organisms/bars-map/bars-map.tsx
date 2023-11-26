@@ -33,7 +33,7 @@ export const BarsMapUI = ({ className = "", bars = [] }: BarsMapProps) => {
                         <Marker
                             position={toLngLat(bar.location)}
                             key={index}
-                            icon={getIcon(bar.category)}
+                            icon={getIcon(bar.category!)}
                         >
                             <Popup>
                                 <h2>{bar.name}</h2>
