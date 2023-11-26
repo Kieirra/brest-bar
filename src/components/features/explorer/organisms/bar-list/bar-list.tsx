@@ -1,12 +1,12 @@
 "use client";
 
 import BarCard, { BarCardProps } from "../../molecules/bar-card";
-import useBarList from "./use-bar-list";
+import useBarsAPI from "../../../../../hooks/use-bars-api";
 import BlockTitle from "../../atoms/block-title";
 import Block from "@/components/features/explorer/atoms/block";
 
 const BarList = ({ className = "" }) => {
-    const { bars } = useBarList();
+    const { bars } = useBarsAPI();
     return <BarListUI bars={bars} className={className} />;
 };
 

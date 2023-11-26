@@ -1,4 +1,4 @@
-import { Category } from "../../../types/bar";
+import { Category } from "../../types/bar";
 
 export const getBarIcon = (category: Category) => {
     switch (category) {

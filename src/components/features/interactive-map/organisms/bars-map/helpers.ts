@@ -1,5 +1,5 @@
 import { Category } from "../../../../../../types/bar";
-import { getBarIcon } from "@/lib/common/common";
+import { getBarIcon } from "@/helpers/common";
 import L, { LatLng } from "leaflet";
 
 export const toLngLat = (point = [0, 0]) => {

@@ -1,6 +1,6 @@
 import { Category } from "../../../../../types/bar";
 import Card from "@/components/common/atoms/card";
-import { getBarIcon } from "@/lib/common/common";
+import { getBarIcon } from "@/helpers/common";
 import tw from "tailwind-styled-components";
 
 export interface BarCardProps {

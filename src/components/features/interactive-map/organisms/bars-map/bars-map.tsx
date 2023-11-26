@@ -6,7 +6,7 @@ import MarkerClusterGroup from "react-leaflet-cluster";
 import LeafletImport from "../../atoms/leaflet-import";
 import { Bar } from "@/../types/bar";
 import { createClusterCustomIcon, getIcon, toLngLat } from "./helpers";
-import useBarList from "@/components/features/explorer/organisms/bar-list/use-bar-list";
+import useBarsAPI from "@/hooks/use-bars-api";
 import "./bars-map.css";
 
 interface BarsMapProps {
@@ -15,7 +15,7 @@ interface BarsMapProps {
 }
 
 const BarsMap = ({ className = "" }: BarsMapProps) => {
-    const { bars } = useBarList();
+    const { bars } = useBarsAPI();
     return <BarsMapUI className={className} bars={bars} />;
 };
 

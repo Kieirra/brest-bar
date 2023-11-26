@@ -3,7 +3,7 @@ import BlockTitle from "../../atoms/block-title";
 import Card from "@/components/common/atoms/card";
 import tw from "tailwind-styled-components";
 import { Category } from "../../../../../../types/bar";
-import { getBarIcon } from "@/lib/common/common";
+import { getBarIcon } from "@/helpers/common";
 
 const DrinkCategories = ({ className = "" }) => {
     return (

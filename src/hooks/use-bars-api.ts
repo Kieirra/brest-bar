@@ -1,7 +1,7 @@
-import { Bar } from "../../../../../../types/bar";
+import { Bar } from "../../types/bar";
 import { useEffect, useState } from "react";
 
-const useBarList = () => {
+const useBarsAPI = () => {
     const [bars, setBars] = useState([] as Bar[]);
 
     useEffect(() => {
@@ -18,4 +18,4 @@ const useBarList = () => {
     };
 };
 
-export default useBarList;
+export default useBarsAPI;
