@@ -3,7 +3,7 @@ import "tailwindcss/tailwind.css";
 import SortButton from "./sort-button";
 
 const meta: Meta<typeof SortButton> = {
-    title: "organisms/SortButton",
+    title: "features/explorer/atoms/SortButton",
     component: SortButton,
     tags: ["autodocs"],
 };

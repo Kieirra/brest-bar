@@ -8,6 +8,7 @@ import PlusButton from "../../atoms/plus-button";
 import { useState } from "react";
 import SortButton from "../../atoms/sort-button";
 import { SortBy, sortByStars, filterByCategory } from "./helpers";
+import BarCardSkeleton from "../../molecules/bar-card-skeleton";
 
 interface BarListProps {
     bars: Bar[];
@@ -40,6 +41,13 @@ const BarList = ({ bars, className, category = Category.ALL }: BarListProps) => 
                 </div>
             </div>
             <div className="flex flex-col space-y-6">
+                {bars.length === 0 && (
+                    <>
+                        <BarCardSkeleton />
+                        <BarCardSkeleton />
+                        <BarCardSkeleton />
+                    </>
+                )}
                 {bars
                     .sort(sortByStars(sortBy))
                     .filter(filterByCategory(category))
