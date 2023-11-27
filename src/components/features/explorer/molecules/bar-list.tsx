@@ -1,9 +1,17 @@
+import { MouseEventHandler } from "react";
 import BarCard from "./bar-card";
 import BlockTitle from "../atoms/block-title";
 import Block from "@/components/features/explorer/atoms/block";
 import { Bar } from "../../../../../types/bar";
+import PlusButton from "../atoms/plus-button";
 
-const BarList = ({ bars, className }: { bars: Bar[]; className?: string }) => {
+interface BarListProps {
+    bars: Bar[];
+    className?: string;
+    loadMoreBars?: CallableFunction;
+}
+
+const BarList = ({ bars, className, loadMoreBars }: BarListProps) => {
     return (
         <Block className={className}>
             <BlockTitle>Explorer</BlockTitle>
@@ -12,6 +20,12 @@ const BarList = ({ bars, className }: { bars: Bar[]; className?: string }) => {
                     <BarCard bar={bar} key={index} />
                 ))}
             </div>
+            <PlusButton
+                className="block mx-auto my-4"
+                onClick={() => loadMoreBars && loadMoreBars()}
+            >
+                Voir plus
+            </PlusButton>
         </Block>
     );
 };
