@@ -29,7 +29,7 @@ export const MultipleBar: Story = {
                     "vendredi: 22:00 - 04:00",
                     "samedi: 22:00 - 04:00",
                     "dimanche: Fermé",
-                ]
+                ],
             },
             {
                 name: "Bar 2",

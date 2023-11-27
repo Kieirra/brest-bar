@@ -8,7 +8,8 @@ import DrinkCategories from "../../molecules/drink-categories";
 import ExplorerHeader from "../../molecules/explorer-header";
 import { Bar, Category } from "../../../../../../types/bar";
 import useBarsStore from "@/stores/bars-store";
-import tw from "tailwind-styled-components";
+import { CloseButton } from "../../atoms/close-button";
+import { ScrollablePanel } from "../../atoms/scrollable-panel";
 
 const ExplorerPanel = ({ className = "" }) => {
     const { bars } = useBarsAPI();
@@ -69,7 +70,7 @@ export const ExplorerPanelUI = ({
                             src="/images/open-close.svg"
                             width={40}
                             height={40}
-                            alt="Picture of the author"
+                            alt="close button"
                         />
                     </CloseButton>
                 )}
@@ -77,22 +78,5 @@ export const ExplorerPanelUI = ({
         </div>
     );
 };
-
-const CloseButton = tw.button`
-    absolute 
-    top-12
-    -translate-y-1/2
-    transition-all
-`;
-
-const ScrollablePanel = tw.div`
-    inline-block 
-    h-full
-    overflow-y-auto 
-    scrollbar-thin 
-    scrollbar-thumb-primary-500 
-    scrollbar-track-ngrey-900
-    transition-all
-`;
 
 export default ExplorerPanel;

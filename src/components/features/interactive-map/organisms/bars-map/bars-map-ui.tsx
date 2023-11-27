@@ -48,7 +48,7 @@ const BarsMapUI = ({ className = "", bars = [], position = [48.400002, -4.6] }: 
                             icon={getIcon(bar.category!)}
                         >
                             <Popup className="leaflet-popup">
-                                <BarMapPopup bar={bar}/>
+                                <BarMapPopup bar={bar} />
                             </Popup>
                         </Marker>
                     ))}

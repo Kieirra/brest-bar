@@ -1,6 +1,6 @@
 import { Bar } from "../../../../../types/bar";
 
-const BarMapPopup = ({ bar } : {bar: Bar}) => {
+const BarMapPopup = ({ bar }: { bar: Bar }) => {
     return (
         <>
             <h2 className="text-lg font-bold text-secondary-400">{bar.name}</h2>
