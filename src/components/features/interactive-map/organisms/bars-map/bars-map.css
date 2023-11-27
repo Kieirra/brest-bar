@@ -34,3 +34,13 @@
     opacity: 0.8;
     font-size: 1.3rem;
 }
+
+.leaflet-popup .leaflet-popup-content-wrapper {
+    background-color: rgb(51 65 85);
+}
+
+.leaflet-container a.leaflet-popup-close-button {
+    color: white !important;
+    font-size: 2rem;
+    margin-top: 0.25rem;
+}

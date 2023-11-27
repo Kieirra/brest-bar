@@ -21,6 +21,15 @@ export const MultipleBar: Story = {
                 location: [48.400002, -4.6],
                 website: "https://www.google.com",
                 category: Category.BAR,
+                openingHours: [
+                    "lundi: Fermé",
+                    "mardi: Fermé",
+                    "mercredi: Fermé",
+                    "jeudi: Fermé",
+                    "vendredi: 22:00 - 04:00",
+                    "samedi: 22:00 - 04:00",
+                    "dimanche: Fermé",
+                ]
             },
             {
                 name: "Bar 2",

@@ -4,10 +4,11 @@ import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import MarkerClusterGroup from "react-leaflet-cluster";
 import LeafletImport from "../../atoms/leaflet-import";
 import { createClusterCustomIcon, getIcon, toLngLat } from "./helpers";
-import "./bars-map.css";
 import { Bar } from "../../../../../../types/bar";
 import { useEffect, useMemo, useRef } from "react";
 import { Map } from "leaflet";
+import BarMapPopup from "../../molecules/bar-map-popup";
+import "./bars-map.css";
 
 interface BarsMapProps {
     className?: string;
@@ -20,6 +21,15 @@ const BarsMapUI = ({ className = "", bars = [], position = [48.400002, -4.6] }: 
     const urlColor = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
     const attribution = '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors';
     const map = useRef(null as Map | null);
+
+    useEffect(() => {
+        if (map.current) {
+            map.current.flyTo(position, 18, {
+                animate: true,
+                duration: 0.5,
+            });
+        }
+    }, [position]);
 
     const displayMap = useMemo(() => {
         return (
@@ -37,9 +47,8 @@ const BarsMapUI = ({ className = "", bars = [], position = [48.400002, -4.6] }: 
                             key={index}
                             icon={getIcon(bar.category!)}
                         >
-                            <Popup>
-                                <h2>{bar.name}</h2>
-                                <p>{bar.address}</p>
+                            <Popup className="leaflet-popup">
+                                <BarMapPopup bar={bar}/>
                             </Popup>
                         </Marker>
                     ))}
@@ -47,15 +56,6 @@ const BarsMapUI = ({ className = "", bars = [], position = [48.400002, -4.6] }: 
             </MapContainer>
         );
     }, [bars]);
-
-    useEffect(() => {
-        if (map.current) {
-            map.current.flyTo(position, 18, {
-                animate: true,
-                duration: 0.5,
-            });
-        }
-    }, [position]);
 
     return (
         <div className="bg-ngrey-900">
