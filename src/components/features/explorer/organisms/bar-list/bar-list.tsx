@@ -24,7 +24,7 @@ const BarList = ({ bars, className, category = Category.ALL }: BarListProps) => 
         <Block className={className}>
             <div className="flex justify-between">
                 <BlockTitle>Explorer</BlockTitle>
-                <div className="flex space-x-2 mb-4">
+                <div className="mb-4 flex space-x-2">
                     <SortButton
                         className={sortBy === SortBy.HIGH_STARS ? "bg-primary-500" : ""}
                         onClick={() => setSortBy(SortBy.HIGH_STARS)}
@@ -50,7 +50,7 @@ const BarList = ({ bars, className, category = Category.ALL }: BarListProps) => 
             </div>
             {barsCount < bars.filter(filterByCategory(category)).length && (
                 <PlusButton
-                    className="block mx-auto my-4"
+                    className="mx-auto my-4 block"
                     onClick={() => setBarsCount(barsCount + 5)}
                 >
                     Voir plus

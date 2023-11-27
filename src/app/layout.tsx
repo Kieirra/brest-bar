@@ -14,7 +14,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     return (
         <html lang="en">
             <body className={inter.className}>
-                <Header className="absolute top-0 w-screen z-10 h-20" />
+                <Header className="absolute top-0 z-10 h-20 w-screen" />
                 <main>{children}</main>
             </body>
         </html>

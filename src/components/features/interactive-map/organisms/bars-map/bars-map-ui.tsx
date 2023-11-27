@@ -24,7 +24,7 @@ const BarsMapUI = ({ className = "", bars = [], position = [48.400002, -4.6] }: 
     const displayMap = useMemo(() => {
         return (
             <MapContainer
-                className={`w-screen h-screen ${className}`}
+                className={`h-screen w-screen ${className}`}
                 center={positionLngLat}
                 zoom={12}
                 ref={map}

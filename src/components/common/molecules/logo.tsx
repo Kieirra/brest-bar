@@ -2,7 +2,7 @@ import TextGradient from "../atoms/text-gradient";
 
 const Logo = () => {
     return (
-        <div className="text-white text-4xl">
+        <div className="text-4xl text-white">
             🍻 Brest <TextGradient>bar</TextGradient>
         </div>
     );

@@ -11,7 +11,7 @@ const BarCard = ({ bar }: { bar: Bar }) => {
 
     return (
         <Card
-            className="max-w-lg hover:bg-ngrey-900 hover:cursor-pointer transition-all"
+            className="max-w-lg transition-all hover:cursor-pointer hover:bg-ngrey-900"
             onClick={() => {
                 setPosition(bar.location!);
                 console.log(bar.location);
@@ -20,11 +20,11 @@ const BarCard = ({ bar }: { bar: Bar }) => {
             <Title>
                 <span className="pr-2">{getBarIcon(bar.category)}</span> {bar.name}
             </Title>
-            <div className="text-white text-sm mb-2">
+            <div className="mb-2 text-sm text-white">
                 <Ratings rating={bar.rating} ratingCount={bar.ratingCount} /> -{" "}
                 <OpeningHours openingHours={bar.openingHours} />
             </div>
-            <div className="text-white mb-2">{bar.address}</div>
+            <div className="mb-2 text-white">{bar.address}</div>
             <div className="flex flex-row space-x-8">
                 {bar.website && (
                     <Contact

@@ -20,7 +20,7 @@ const isOpened = (
     isAfterMidnight: boolean,
     currentHour: number,
     startHour: number,
-    endHour: number
+    endHour: number,
 ) => {
     return (
         (isAfterMidnight && (currentHour >= startHour || currentHour < endHour)) ||

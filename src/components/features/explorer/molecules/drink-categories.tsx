@@ -25,7 +25,7 @@ const DrinkCategories = ({ className = "", onChangeCategory }: DrinkCategoriesPr
                 {Object.keys(Category).map((category) => (
                     <div key={category}>
                         <Card
-                            className={`p-10 text-4xl hover:bg-ngrey-900 hover:cursor-pointer transition-all border-2 border-transparent ${
+                            className={`border-2 border-transparent p-10 text-4xl transition-all hover:cursor-pointer hover:bg-ngrey-900 ${
                                 selectedCategory === Category[category as keyof typeof Category]
                                     ? "border-primary-500 bg-ngrey-900"
                                     : ""

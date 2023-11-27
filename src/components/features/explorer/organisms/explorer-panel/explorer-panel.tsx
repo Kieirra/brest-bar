@@ -46,7 +46,7 @@ export const ExplorerPanelUI = ({
 
     return (
         <div className={className}>
-            <div className="relative h-[calc(100vh-5rem)] z-10">
+            <div className="relative z-10 h-[calc(100vh-5rem)]">
                 <ScrollablePanel className={isOpen ? "" : "-translate-x-full"}>
                     <CloseButton className="right-4" onClick={togglePanel}>
                         <Image
@@ -58,7 +58,7 @@ export const ExplorerPanelUI = ({
                     </CloseButton>
                     <ExplorerHeader className="pr-10" />
                     <DrinkCategories
-                        className="border-ngrey-500 border-y-2"
+                        className="border-y-2 border-ngrey-500"
                         onChangeCategory={setCategory}
                     />
                     <BarList bars={bars} category={category} />
