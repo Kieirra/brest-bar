@@ -4,10 +4,19 @@ import Card from "@/components/common/atoms/card";
 import tw from "tailwind-styled-components";
 import { Category } from "../../../../../types/bar";
 import { getBarIcon } from "@/helpers/common";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-const DrinkCategories = ({ className = "" }) => {
+interface DrinkCategoriesProps {
+    className?: string;
+    onChangeCategory?: (category: Category) => void;
+}
+
+const DrinkCategories = ({ className = "", onChangeCategory }: DrinkCategoriesProps) => {
     const [selectedCategory, setSelectedCategory] = useState(Category.ALL);
+
+    useEffect(() => {
+        onChangeCategory && onChangeCategory(selectedCategory);
+    }, [selectedCategory]);
 
     return (
         <Block className={className}>
