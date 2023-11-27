@@ -3,6 +3,7 @@ export enum Category {
     BRASSERIE = "brasserie",
     BAR = "bar",
     OTHER = "autre",
+    ALL= "tous",
 }
 
 export interface Bar {
