@@ -36,9 +36,11 @@ const BarCard = ({ bar }: { bar: Bar }) => {
                         🗔 &nbsp; Site web
                     </Contact>
                 )}
-                <Contact href={`tel:${bar.phone}`} onClick={(e: any) => e.stopPropagation()}>
-                    ☏ &nbsp; {bar.phone}
-                </Contact>
+                {bar.phone && (
+                    <Contact href={`tel:${bar.phone}`} onClick={(e: any) => e.stopPropagation()}>
+                        ☏ &nbsp; {bar.phone}
+                    </Contact>
+                )}
             </div>
         </Card>
     );
@@ -52,6 +54,8 @@ const Title = tw.h2`
 
 const Contact = tw.a`
     text-secondary-300 
+    hover:text-accent-500
+    transition-all
 `;
 
 export default BarCard;
