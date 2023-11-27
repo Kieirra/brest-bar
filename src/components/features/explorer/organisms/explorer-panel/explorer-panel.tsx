@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Image from "next/image";
 import useBarsAPI from "@/components/features/explorer/organisms/explorer-panel/use-bars-api";
 import BarList from "../bar-list/bar-list";
 import DrinkCategories from "../../molecules/drink-categories";
@@ -49,14 +48,7 @@ export const ExplorerPanelUI = ({
         <div className={className}>
             <div className="relative z-10 h-[calc(100vh-5rem)]">
                 <ScrollablePanel className={isOpen ? "" : "-translate-x-full"}>
-                    <CloseButton className="right-4" onClick={togglePanel}>
-                        <Image
-                            src="/images/open-close.svg"
-                            width={40}
-                            height={40}
-                            alt="Picture of the author"
-                        />
-                    </CloseButton>
+                    <CloseButton className="right-4" onClick={togglePanel} />
                     <ExplorerHeader className="pr-10" />
                     <DrinkCategories
                         className="border-y-2 border-ngrey-500"
@@ -64,16 +56,7 @@ export const ExplorerPanelUI = ({
                     />
                     <BarList bars={bars} category={category} />
                 </ScrollablePanel>
-                {!isOpen && (
-                    <CloseButton className="left-4 -scale-x-100" onClick={togglePanel}>
-                        <Image
-                            src="/images/open-close.svg"
-                            width={40}
-                            height={40}
-                            alt="close button"
-                        />
-                    </CloseButton>
-                )}
+                {!isOpen && <CloseButton className="left-4 -scale-x-100" onClick={togglePanel} />}
             </div>
         </div>
     );
