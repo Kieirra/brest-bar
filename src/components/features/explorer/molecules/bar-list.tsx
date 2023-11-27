@@ -28,9 +28,14 @@ const BarList = ({ bars, className, category = Category.ALL }: BarListProps) => 
                         <BarCard bar={bar} key={index} />
                     ))}
             </div>
-            <PlusButton className="block mx-auto my-4" onClick={() => setBarsCount(barsCount + 5)}>
-                Voir plus
-            </PlusButton>
+            {barsCount < bars.filter(byCategory).length && (
+                <PlusButton
+                    className="block mx-auto my-4"
+                    onClick={() => setBarsCount(barsCount + 5)}
+                >
+                    Voir plus
+                </PlusButton>
+            )}
         </Block>
     );
 };
