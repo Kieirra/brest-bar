@@ -5,9 +5,17 @@ import BarList from "../molecules/bar-list";
 import DrinkCategories from "../molecules/drink-categories";
 import ExplorerTitle from "../molecules/explorer-title";
 import { Bar } from "../../../../../types/bar";
+import useBarsStore from "@/stores/bars-store";
+import { useEffect } from "react";
 
 const ExplorerPanel = ({ className = "" }) => {
     const { bars } = useBarsAPI();
+    const setBars = useBarsStore((state) => state.setBars);
+
+    useEffect(() => {
+        setBars(bars);
+    }, [bars]);
+
     return <ExplorerPanelUI bars={bars} className={className} />;
 };
 

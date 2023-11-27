@@ -1,26 +1,34 @@
 "use client";
 
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
-import { LatLng } from "leaflet";
 import MarkerClusterGroup from "react-leaflet-cluster";
 import LeafletImport from "../../atoms/leaflet-import";
 import { createClusterCustomIcon, getIcon, toLngLat } from "./helpers";
 import "./bars-map.css";
 import { Bar } from "../../../../../../types/bar";
+import { useEffect, useMemo, useRef } from "react";
+import { Map } from "leaflet";
 
 interface BarsMapProps {
     className?: string;
     bars?: Bar[];
+    position?: [number, number];
 }
 
-const BarsMapUI = ({ className = "", bars = [] }: BarsMapProps) => {
-    const position = new LatLng(48.400002, -4.6);
+const BarsMapUI = ({ className = "", bars = [], position = [48.400002, -4.6] }: BarsMapProps) => {
+    const positionLngLat = toLngLat(position);
     const urlColor = "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png";
     const attribution = '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors';
+    const map = useRef(null as Map | null);
 
-    return (
-        <div className="bg-ngrey-900">
-            <MapContainer className={`w-screen h-screen ${className}`} center={position} zoom={12}>
+    const displayMap = useMemo(() => {
+        return (
+            <MapContainer
+                className={`w-screen h-screen ${className}`}
+                center={positionLngLat}
+                zoom={12}
+                ref={map}
+            >
                 <TileLayer url={urlColor} attribution={attribution} />
                 <MarkerClusterGroup iconCreateFunction={createClusterCustomIcon} chunkedLoading>
                     {bars.map((bar, index) => (
@@ -37,6 +45,21 @@ const BarsMapUI = ({ className = "", bars = [] }: BarsMapProps) => {
                     ))}
                 </MarkerClusterGroup>
             </MapContainer>
+        );
+    }, []);
+
+    useEffect(() => {
+        if (map.current) {
+            map.current.flyTo(position, 18, {
+                animate: true,
+                duration: 0.5,
+            });
+        }
+    }, [position]);
+
+    return (
+        <div className="bg-ngrey-900">
+            {displayMap}
             <LeafletImport />
         </div>
     );

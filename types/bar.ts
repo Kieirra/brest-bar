@@ -9,7 +9,7 @@ export interface Bar {
     name: string;
     address: string;
     website?: string;
-    location?: number[];
+    location?: [number, number];
     category?: Category;
     rating?: number;
     ratingCount?: number;

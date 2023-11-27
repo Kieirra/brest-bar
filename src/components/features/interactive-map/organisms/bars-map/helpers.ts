@@ -3,7 +3,6 @@ import { getBarIcon } from "@/helpers/common";
 import L, { LatLng } from "leaflet";
 
 export const toLngLat = (point = [0, 0]) => {
-    console.log(point);
     return new LatLng(point[0], point[1]);
 };
 
