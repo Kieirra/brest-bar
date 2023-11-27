@@ -3,7 +3,7 @@ import BarList from "./bar-list";
 import { Category } from "@/../types/bar";
 
 const meta: Meta<typeof BarList> = {
-    title: "features/explorer/molecules/BarList",
+    title: "features/explorer/organisms/BarList",
     component: BarList,
     tags: ["autodocs"],
 };

@@ -1,6 +1,6 @@
 "use client";
 
-import BarCard from "../bar-card";
+import BarCard from "../../molecules/bar-card";
 import BlockTitle from "../../atoms/block-title";
 import Block from "@/components/features/explorer/atoms/block";
 import { Bar, Category } from "../../../../../../types/bar";
