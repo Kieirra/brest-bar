@@ -1,5 +1,5 @@
 import BarsMap from "@/components/features/interactive-map/organisms/bars-map/bars-map";
-import ExplorerPanel from "@/components/features/explorer/organisms/explorer-panel";
+import ExplorerPanel from "@/components/features/explorer/organisms/explorer-panel/explorer-panel";
 
 const Home = () => {
     return (

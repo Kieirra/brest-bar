@@ -1,10 +1,10 @@
 "use client";
 
-import useBarsAPI from "@/hooks/use-bars-api";
-import BarList from "../molecules/bar-list";
-import DrinkCategories from "../molecules/drink-categories";
-import ExplorerTitle from "../molecules/explorer-title";
-import { Bar } from "../../../../../types/bar";
+import useBarsAPI from "@/components/features/explorer/organisms/explorer-panel/use-bars-api";
+import BarList from "../../molecules/bar-list";
+import DrinkCategories from "../../molecules/drink-categories";
+import ExplorerTitle from "../../molecules/explorer-title";
+import { Bar } from "../../../../../../types/bar";
 import useBarsStore from "@/stores/bars-store";
 import { useEffect } from "react";
 

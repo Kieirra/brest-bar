@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { ExplorerPanelUI } from "./explorer-panel";
-import { Category } from "../../../../../types/bar";
+import { Category } from "../../../../../../types/bar";
 
 const meta: Meta<typeof ExplorerPanelUI> = {
     title: "features/explorer/organisms/ExplorerPanel",
