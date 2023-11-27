@@ -2,7 +2,6 @@
 
 import dynamic from "next/dynamic";
 import useBarsStore from "@/stores/bars-store";
-import { useEffect } from "react";
 
 // We are forced to do this because leaflet is not compatible with vercel
 // deployment. "window is not defined" error is thrown.

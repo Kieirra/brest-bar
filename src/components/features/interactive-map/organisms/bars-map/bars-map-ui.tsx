@@ -46,7 +46,7 @@ const BarsMapUI = ({ className = "", bars = [], position = [48.400002, -4.6] }: 
                 </MarkerClusterGroup>
             </MapContainer>
         );
-    }, []);
+    }, [bars]);
 
     useEffect(() => {
         if (map.current) {
