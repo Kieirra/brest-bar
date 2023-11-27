@@ -1,7 +1,7 @@
 import Block from "@/components/features/explorer/atoms/block";
 import TextGradient from "@/components/common/atoms/text-gradient";
 
-const ExplorerTitle = () => {
+const ExplorerHeader = () => {
     return (
         <Block>
             <h1 className="text-4xl text-white">
@@ -11,4 +11,4 @@ const ExplorerTitle = () => {
     );
 };
 
-export default ExplorerTitle;
+export default ExplorerHeader;

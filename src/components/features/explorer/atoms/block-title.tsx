@@ -4,6 +4,7 @@ const BlockTitle = tw.h1`
   bold 
   text-2xl 
   text-white
+  mt-2
   mb-4
 `;
 

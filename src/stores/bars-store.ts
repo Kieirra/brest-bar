@@ -7,6 +7,7 @@ interface BarsStore {
     category: Category;
     setBars: (newBars: Bar[]) => void;
     setPosition: (newPosition: [number, number]) => void;
+    setCategory: (newCategory: Category) => void;
 }
 
 const useBarsStore = create<BarsStore>((set, get) => ({
@@ -15,6 +16,7 @@ const useBarsStore = create<BarsStore>((set, get) => ({
     category: Category.ALL,
     setBars: (newBars: Bar[]) => set({ bars: newBars }),
     setPosition: (newPosition: [number, number]) => set({ position: newPosition }),
+    setCategory: (newCategory: Category) => set({ category: newCategory }),
 }));
 
 export default useBarsStore;
