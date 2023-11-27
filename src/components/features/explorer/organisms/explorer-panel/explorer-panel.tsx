@@ -10,21 +10,16 @@ import useBarsStore from "@/stores/bars-store";
 
 const ExplorerPanel = ({ className = "" }) => {
     const { bars } = useBarsAPI();
-    const { setBars, loadMoreBars, setLoadedBars, loadedBars } = useBarsStore();
+    const { setBars } = useBarsStore();
 
     useEffect(() => {
         setBars(bars);
-        setLoadedBars(bars.slice(0, 5));
     }, [bars]);
 
-    return <ExplorerPanelUI bars={loadedBars} className={className} loadMoreBars={loadMoreBars} />;
+    return <ExplorerPanelUI bars={bars} className={className} />;
 };
 
-export const ExplorerPanelUI = ({
-    bars = [] as Bar[],
-    className = "",
-    loadMoreBars,
-}: ExplorerPanelUIProps) => {
+export const ExplorerPanelUI = ({ bars = [] as Bar[], className = "" }) => {
     const [category, setCategory] = useState(Category.ALL);
     const onChangeCategory = (newCategory: Category) => {
         setCategory(newCategory);
@@ -39,15 +34,9 @@ export const ExplorerPanelUI = ({
                 className="border-ngrey-500 border-y-2"
                 onChangeCategory={onChangeCategory}
             />
-            <BarList bars={bars} loadMoreBars={loadMoreBars} category={category} />
+            <BarList bars={bars} category={category} />
         </div>
     );
 };
-
-interface ExplorerPanelUIProps {
-    bars: Bar[];
-    className?: string;
-    loadMoreBars?: CallableFunction;
-}
 
 export default ExplorerPanel;
